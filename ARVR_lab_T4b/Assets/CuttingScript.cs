@@ -6,7 +6,7 @@ public class CuttingScript : MonoBehaviour
 { 
 
     private bool cuttingParticles = false;
-    private bool cutting = false;
+    public bool cutting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,17 @@ public class CuttingScript : MonoBehaviour
         //stimulate ems and trigger particles
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Cuttable")
+        if (collider.gameObject.tag == "Cuttable")
         {
             cutting = true;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
-        GameObject cube = collision.gameObject;
+        GameObject cube = collider.gameObject;
         if (transform.position.y < cube.transform.position.y && cube.tag == "Cuttable")
         {
             cutting = false;
@@ -58,6 +58,7 @@ public class CuttingScript : MonoBehaviour
         rightSideObj.transform.localScale = new Vector3(rightWidth, victimScale.y, victimScale.z);
         rightSideObj.AddComponent<Rigidbody>().mass = 100f;
         rightSideObj.GetComponent<MeshRenderer>().material = mat;
+        //rightSideObj.layer = LayerMask.NameToLayer("IgnoreSword");
 
         GameObject leftSideObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
         leftSideObj.transform.position = (leftPoint + pos) / 2;
@@ -65,6 +66,7 @@ public class CuttingScript : MonoBehaviour
         leftSideObj.transform.localScale = new Vector3(leftWidth, victimScale.y, victimScale.z);
         leftSideObj.AddComponent<Rigidbody>().mass = 100f;
         leftSideObj.GetComponent<MeshRenderer>().material = mat;
+        //leftSideObj.layer = LayerMask.NameToLayer("IgnoreSword");
 
         return true;
     }
