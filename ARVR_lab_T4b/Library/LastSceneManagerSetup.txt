@@ -1,7 +1,7 @@
 sceneSetups:
-- path: Assets/VRTK/Examples/[005 - Interactions] InteractableObjects.unity
+- path: Assets/_scenes/CalibrationMenu.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/_scenes/CalibrationMenu.unity
+- path: Assets/_scenes/MainScene.unity
   isLoaded: 1
   isActive: 1

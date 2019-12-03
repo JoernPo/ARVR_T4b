@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CuttingScript : MonoBehaviour
 { 
 
     private bool cuttingParticles = false;
+    public openEMSstim openEMSstim;
     public bool cutting = false;
+    public int intensity = 0;
+    private string bothChannelsCommand;
+    private IList commandList = null;
 
     // Start is called before the first frame update
     void Start()
@@ -15,17 +20,34 @@ public class CuttingScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //check for downwards movement of sword
+        
+        if (cutting)
+        {
+            SteamVR_Controller.Input(0).TriggerHapticPulse(20);
+            foreach (string command in commandList)
+            {
+                Debug.Log(command);
 
-        //stimulate ems and trigger particles
+                // parse the stimulation command to get the duration
+
+                // convert stimulation command from string into bytes
+                byte[] stimulation_message = System.Text.Encoding.UTF8.GetBytes(command);
+                // trigger stimulation with EMS device
+                Debug.Log(openEMSstim.sendMessage(stimulation_message));
+                // wait for duration 
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Cuttable")
         {
+            intensity = collider.gameObject.GetComponent<resistanceLevel>().resistance;
+            bothChannelsCommand = "C0I" + intensity + "T500G";
+            commandList = bothChannelsCommand.Split(',').ToList();
             cutting = true;
         }
     }
@@ -36,6 +58,7 @@ public class CuttingScript : MonoBehaviour
         if (transform.position.y < cube.transform.position.y && cube.tag == "Cuttable")
         {
             cutting = false;
+            intensity = 0;
             Cut(cube.transform, transform.position);
         }
     }

@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\CuttingScript.cs" />
     <Compile Include="Assets\Manager.cs" />
+    <Compile Include="Assets\resistanceLevel.cs" />
     <Compile Include="Assets\Scripts\EMS\EMS_Grab_Object.cs" />
     <Compile Include="Assets\Scripts\EMS\EMS_HardSurfaces.cs" />
     <Compile Include="Assets\Scripts\EMS\EMS_Stefani.cs" />
