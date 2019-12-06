@@ -25,7 +25,7 @@ public class CuttingScript : MonoBehaviour
         
         if (cutting)
         {
-            SteamVR_Controller.Input(0).TriggerHapticPulse(20);
+            
             foreach (string command in commandList)
             {
                 Debug.Log(command);
@@ -55,10 +55,10 @@ public class CuttingScript : MonoBehaviour
     private void OnTriggerExit(Collider collider)
     {
         GameObject cube = collider.gameObject;
+        cutting = false;
+        intensity = 0;
         if (transform.position.y < cube.transform.position.y && cube.tag == "Cuttable")
         {
-            cutting = false;
-            intensity = 0;
             Cut(cube.transform, transform.position);
         }
     }

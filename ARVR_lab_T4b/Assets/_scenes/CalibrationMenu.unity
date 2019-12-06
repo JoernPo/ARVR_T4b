@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6976db971041423d9700c143d3ef00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortName: COM6
+  PortName: COM3
 --- !u!4 &824853577
 Transform:
   m_ObjectHideFlags: 0
