@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CuttingScript.cs" />
+    <Compile Include="Assets\Despawner.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\resistanceLevel.cs" />
     <Compile Include="Assets\Scripts\EMS\EMS_Grab_Object.cs" />
@@ -73,6 +75,8 @@
     <Compile Include="Assets\Scripts\EMS\ideAAL_Guide.cs" />
     <Compile Include="Assets\Scripts\EMS\openEMSstim.cs" />
     <Compile Include="Assets\Scripts\EMS\StimPattern.cs" />
+    <Compile Include="Assets\SpawnPos.cs" />
+    <Compile Include="Assets\StarterBlock.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -532,9 +536,11 @@
     <Compile Include="Assets\VRTK\Source\SDK\Ximmerse\SDK_XimmerseHeadset.cs" />
     <Compile Include="Assets\VRTK\Source\SDK\Ximmerse\SDK_XimmerseSystem.cs" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
+    <None Include="Assets\MenuBoard\Doc\ReadMe.txt" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\VRTK\Documentation.txt" />
+    <None Include="Assets\20 Ground Material Sets MAN MADE\readme.txt" />
     <None Include="Assets\VRTK\Source\Scripts\Internal\Shaders\UIOverlay.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
     <None Include="Assets\VRTK\Source\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
@@ -544,6 +550,7 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
     <None Include="Assets\VRTK\Source\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
+    <None Include="Assets\MenuBoard\Doc\ChangeLogs.txt" />
     <None Include="Assets\SteamVR\readme.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
     <None Include="Assets\VRTK\Source\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />

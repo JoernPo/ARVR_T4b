@@ -12,11 +12,12 @@ public class CuttingScript : MonoBehaviour
     public int intensity = 0;
     private string bothChannelsCommand;
     private IList commandList = null;
+    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -60,6 +61,10 @@ public class CuttingScript : MonoBehaviour
         if (transform.position.y < cube.transform.position.y && cube.tag == "Cuttable")
         {
             Cut(cube.transform, transform.position);
+            gameManager.changeScore(collider.gameObject.GetComponent<resistanceLevel>().score);
+        } else if(transform.position.y < cube.transform.position.y && cube.tag == "Starter") {
+            Cut(cube.transform, transform.position);
+            cube.GetComponent<StarterBlock>().startLevel();
         }
     }
 

@@ -2,6 +2,3 @@ sceneSetups:
 - path: Assets/_scenes/MainScene.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/_scenes/CalibrationMenu.unity
-  isLoaded: 0
-  isActive: 0

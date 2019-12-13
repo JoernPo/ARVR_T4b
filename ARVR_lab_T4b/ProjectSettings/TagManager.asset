@@ -13,6 +13,7 @@ TagManager:
   - Torso
   - Head
   - Cuttable
+  - Starter
   layers:
   - Default
   - TransparentFX
