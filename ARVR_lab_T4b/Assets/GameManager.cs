@@ -11,16 +11,21 @@ public class GameManager : MonoBehaviour
     public float speed = 0.1f;
     public int score = 0;
     public Text text;
+    public GameObject starters;
 
 
     public IEnumerator StartGame(int amountOfCubes, float speedFactor, float spawnIntervall)
     {
+        starters.SetActive(false);
         while (amountOfCubes > 0) {
             Debug.Log("Cubes left:" + amountOfCubes);
-            spawnCube(0);
+            int index = Random.Range(0, cuttables.Length - 1);
+            spawnCube(index);
             amountOfCubes--;
             yield return new WaitForSeconds(spawnIntervall);
         }
+        yield return new WaitForSeconds(7f);
+        starters.SetActive(true);
     }
 
     IEnumerator moveCube(GameObject cube)
@@ -38,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     void spawnCube(int index)
     {
-        GameObject Cube = Instantiate(cuttables[0], spawnPosScript.GetARandomPos(), Quaternion.identity);
+        GameObject Cube = Instantiate(cuttables[index], spawnPosScript.GetARandomPos(), Quaternion.identity);
         StartCoroutine(moveCube(Cube));
     }
 
@@ -52,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void remoteStart(int amount, float speed, float intervall)
     {
-        StartCoroutine(StartGame(20, 1, 1));
+        StartCoroutine(StartGame(amount, speed, intervall));
     }
 
 }

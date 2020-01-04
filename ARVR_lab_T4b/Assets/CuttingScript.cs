@@ -63,7 +63,6 @@ public class CuttingScript : MonoBehaviour
             Cut(cube.transform, transform.position);
             gameManager.changeScore(collider.gameObject.GetComponent<resistanceLevel>().score);
         } else if(transform.position.y < cube.transform.position.y && cube.tag == "Starter") {
-            Cut(cube.transform, transform.position);
             cube.GetComponent<StarterBlock>().startLevel();
         }
     }
