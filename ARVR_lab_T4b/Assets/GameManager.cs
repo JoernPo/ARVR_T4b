@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         starters.SetActive(false);
         while (amountOfCubes > 0) {
             Debug.Log("Cubes left:" + amountOfCubes);
-            int index = Random.Range(0, cuttables.Length - 1);
+            int index = Random.Range(0, cuttables.Length);
             spawnCube(index);
             amountOfCubes--;
             yield return new WaitForSeconds(spawnIntervall);

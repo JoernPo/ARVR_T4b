@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7884,10 +7884,12 @@ MonoBehaviour:
   spawnPosScript: {fileID: 1854814932}
   cuttables:
   - {fileID: 4235437432186965805, guid: c8d689fa5770960449860f4b2bdcf97c, type: 3}
+  - {fileID: 6732626378626000839, guid: e17331cfff5588047b3405077bd7f831, type: 3}
+  - {fileID: 1726774482792138805, guid: c57243736d7a30142975330d206c5578, type: 3}
   speed: 2
   score: 0
   text: {fileID: 850995674}
-  starters: {fileID: 0}
+  starters: {fileID: 2099253937}
 --- !u!1 &1847602269
 GameObject:
   m_ObjectHideFlags: 0
@@ -8297,7 +8299,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887672965}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6976db971041423d9700c143d3ef00d, type: 3}
   m_Name: 

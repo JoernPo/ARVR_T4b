@@ -23,7 +23,12 @@ public class CuttingScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        /*
+        string commande = "C0I50T500G";
+        byte[] stimulation_messagee = System.Text.Encoding.UTF8.GetBytes(commande);
+        Debug.Log(openEMSstim.sendMessage(stimulation_messagee));
+        */
+
         if (cutting)
         {
             
@@ -86,6 +91,7 @@ public class CuttingScript : MonoBehaviour
         rightSideObj.AddComponent<Rigidbody>().mass = 100f;
         rightSideObj.GetComponent<MeshRenderer>().material = mat;
         //rightSideObj.layer = LayerMask.NameToLayer("IgnoreSword");
+        Destroy(rightSideObj, 2);
 
         GameObject leftSideObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
         leftSideObj.transform.position = (leftPoint + pos) / 2;
@@ -94,6 +100,7 @@ public class CuttingScript : MonoBehaviour
         leftSideObj.AddComponent<Rigidbody>().mass = 100f;
         leftSideObj.GetComponent<MeshRenderer>().material = mat;
         //leftSideObj.layer = LayerMask.NameToLayer("IgnoreSword");
+        Destroy(leftSideObj, 2);
 
         return true;
     }
